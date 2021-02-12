@@ -1,0 +1,65 @@
+<html lang="en"  xmlns:th="http://www.thymeLeaf.org" th:replace="User/userbasepage::Layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Home</title>
+</head>
+<body>
+
+<section>
+<div class="container">
+  <div class="row">
+     <div class="col-md-12">
+       	<div class="card">
+       	  <div class="card-body">
+       	     
+       	     <h3 class="mb-3">Change password</h3>
+       	  		
+       	  	  <form th:action="@{/user/change-password}" method="post">
+       	  	  
+       	  	  <!-- old password field -->
+       	  	  <div class="form-group">
+       	  	   
+       	  	     <input type="text" name="oldPsw" class="form-control" placeholder="Enter old password" />
+       	  	   
+       	  	  </div>
+       	  	  
+       	  	   <!-- new password field -->
+       	  	  <div class="form-group mt-3">
+       	  	   
+       	  	     <input type="text" name="newPsw" class="form-control" placeholder="Enter new password" />
+       	  	   
+       	  	  </div>
+       	  	  
+       	  	  
+       	  	  <!-- button  -->
+       	  	  <div class="container text-center mt-2">
+       	  	  
+       	  	  <button type="submit" class="btn btn-success"> Change</button>
+       	  	  <button type="reset" class="btn btn-warning"> Reset</button>
+       	  	  
+       	  	  </div>
+       	  	  
+       	  	  </form>
+       	  
+       	  </div>
+       	
+       	</div>
+     
+     </div>
+  
+  </div>
+
+</div>  
+ 
+ 
+ <script>
+$(document).ready(() =>{
+	
+	$(".item").removeClass("activeline");
+	$('#Setting-link').addClass("activeline");
+});
+</script>
+
+</section>
+</body>
+</html>

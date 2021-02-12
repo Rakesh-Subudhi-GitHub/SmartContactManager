@@ -1,0 +1,78 @@
+<html lang="en"  xmlns:th="http://www.thymeLeaf.org" th:replace="User/userbasepage::Layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Home</title>
+</head>
+<body>
+	
+  <section>
+		
+	<div class="card mr-5 ml-5">
+	   <div class="card-body" th:if=${contact}>
+		   
+		   <div class="container text-center">
+		   		
+		   		<!-- fast show image -->
+		      <img class="poticularContact_Img" th:src="@{'/image/'+${contact.image}}" src="" alt="profile photo" />
+		   
+		   		<!-- name show -->
+		   		<h3 class="mt-2"> <span th:text="${contact.name}"></span> (<span th:text="${contact.secondName}"></span>)</h3>
+		   		
+<table class="table text-center ml-5 mr-5">
+
+  <thead>
+    <tr>
+      <th scope="row">#CID</th>
+      <th scope="row">contact <span th:text="${contact.cid}"></span></th>
+      </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <th scope="row">Email</th>
+      <td><span th:text="${contact.email}"></span></td>
+    </tr>
+    
+    <tr>
+      <th scope="row">Phone</th>
+      <td><span th:text="${contact.phone}"></span></td>
+    </tr>
+    
+    
+    <tr>
+      <th scope="row">Work</th>
+      <td><span th:text="${contact.work}"></span></td>
+    </tr>
+    
+   </tbody>
+</table>
+
+		<div class="description">
+    		  <th:block th:utext="${contact.description}"><!-- th:utext its solve the html code(tiny code) in description print -->
+    		  </th:block>          
+   		</div>
+   	
+   	
+   	<!-- add edit update or delete buttons -->	
+   	
+   	<div class="container mt-5">
+
+   			<!-- create button for Delete-->
+			<button th:onclick="|deleteContactNumber(${contact.cid})|" class="btn btn-danger btn-sm btn-block">Delete</button>
+				
+			<!-- create button for Update-->
+			<form method="post" th:action="@{'/user/update-contact/'+${contact.cid}}" class="ml-3 mt-2">
+				<button type="submit" class="btn btn-block btn-warning btn-sm">Update</button>
+			  	</form>
+   	
+   	</div> 
+
+
+		   </div>
+		   
+	   </div>
+	</div>
+		
+  </section>
+</body>
+</html>

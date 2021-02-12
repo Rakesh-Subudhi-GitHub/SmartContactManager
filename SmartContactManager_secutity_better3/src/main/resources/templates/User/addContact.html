@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeLeaf.org" th:replace="User/userbasepage::Layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Home</title>
+</head>
+<body>
+	
+<section>
+  
+  <div class="card mt-0 mr-3 ml-2">
+     
+     <div class="card-body">
+     
+         <h1 class="text-center">Add Contact</h1>
+         
+         <div class="container-fluid mt-2">
+         
+           <div class="row">
+           		
+           		<div class="col-md-8 offset-md-2">
+           			
+           							  <!-- collect contact in userController class pass it (new Contact) -->
+           			<form th:action="@{/user/addContactDetails}" th:object="${contact}" enctype="multipart/form-data"
+           													 method="post" 
+															    class="mt-2" >
+					
+					<!-- fast name -->
+					
+					<div class="input-group">
+						
+						<div class="input-group-prepend">
+						
+						    <div class="input-group-text">
+						    
+						    	<i class="fa fa-plus"></i>
+						    	
+						    </div>
+						</div>
+						
+												<!-- contact name as it is print name="name" put -->
+						<input type="text" id="fistName" name="name" placeholder="Enter Name here.." class="form-control">
+						
+					</div> 
+					   
+					       
+					<!--second name -->
+					<div class="input-group mt-3">
+						
+						<div class="input-group-prepend">
+						
+						    <div class="input-group-text">
+						    
+						    	<i class="fas fa-user-alt"></i>
+						    	
+						    </div>
+						</div>
+						
+												<!-- contact secondName as it is print name="secondName" put -->
+						<input type="text" id="second name" name="secondName" placeholder="Enter NickName here..">
+						
+					</div>  
+					
+					
+					<!--phone number field -->
+					<div class="input-group mt-3">
+						
+						<div class="input-group-prepend">
+						
+						    <div class="input-group-text">
+						    
+						    	<i class="fa fa-phone"></i>
+						    	
+						    </div>
+						</div>
+						
+												<!-- contact phone as it is print name="phone" put -->
+						<input type="number" id="phone" name="phone" placeholder="Enter phone number here..">
+						
+					</div>  
+							
+					<!--email field -->
+					<div class="input-group mt-3">
+						
+						<div class="input-group-prepend">
+						
+						    <div class="input-group-text">
+						    
+						    	<i class="far fa-envelope"></i>
+						    	
+						    </div>
+						</div>
+						
+												<!-- contact email as it is print name="email" put -->
+						<input type="email" id="email" name="email" placeholder="Enter Email here..">
+						
+					</div>  	
+					
+					<!--work field -->
+					<div class="input-group mt-3">
+						
+						<div class="input-group-prepend">
+						
+						    <div class="input-group-text">
+						    
+						    	<i class="fa fa-briefcase"></i>
+						    	
+						    </div>
+						</div>
+						
+												<!-- contact work as it is print name="work" put -->
+						<input type="text" id="work" name="work" placeholder="Enter Work here..">
+						
+					</div>  			
+					
+					<!-- contact Description field-->
+					<div class="form-group mt-3">
+					
+					<textarea name="description" id="description" cols="29" rows="5" class="form-control" placeholder="Enter contact description here.."></textarea>
+					
+					</div>		
+					
+				<!--contact image field -->	
+				<div class="custom-file">
+				<input type="file" name="profileimage">
+				</div>
+				
+				<!-- buttons field -->
+				<div class="container text-center">
+				<button class="btn btn-outline-primary">Save Contact</button>
+				</div>
+					
+          </form>
+           		
+           		
+           		</div>
+           </div>
+         </div>
+     </div>
+  </div>
+  
+</section>
+
+</body>
+</html>

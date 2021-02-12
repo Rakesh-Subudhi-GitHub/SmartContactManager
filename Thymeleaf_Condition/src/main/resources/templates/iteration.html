@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Iteration loop Test</title>
+</head>
+<body>
+	
+	<h1> Going to traverse elements  in collections ::::</h1>
+	<h1> list names are print :::::  <span th:text=${names}></span></h1>
+	
+	
+	<ul>
+		<li th:each="n : ${names}">
+		<span th:text="${n}"></span>
+		</li>
+	</ul>
+	
+	<ul>
+		<li th:each="n,status : ${names}">
+		<span th:text="${status.index} +'    '+  ${n}"></span>
+		</li>
+	</ul>
+	
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org" >
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	
+	<h1> this is about page  and its working</h1>
+	<h1> this is only for learning prepares check it</h1>
+	
+	<h2 th:text="${name}"> </h2>
+	<h2 th:text=${currentDate}></h2>
+	
+	<h1> My name is ::: <span th:text="${name}"/>   and time is  :::  <span th:text="${currentDate}"></span></h1>
+	
+	<h1> all are upper case  <span th:text="${  #strings.toUpperCase(name) }"></span></h1>
+	
+	</body>
+</html>

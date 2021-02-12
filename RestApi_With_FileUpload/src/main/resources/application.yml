@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    password: devibhai
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: rakesh
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      format_sql: true
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle10gDialect
+    show-sql: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+     # max-file-threshold: 10KB

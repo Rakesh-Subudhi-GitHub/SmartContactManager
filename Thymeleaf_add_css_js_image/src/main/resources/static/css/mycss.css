@@ -1,0 +1,14 @@
+body {
+	background-color: blue;
+}
+
+.container{
+	
+	background-color: aqua;
+	padding: 20px;
+	
+	}
+	
+	.profile{
+	border-radius:10%;
+	}

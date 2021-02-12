@@ -1,0 +1,61 @@
+<html lang="en"  xmlns:th="http://www.thymeLeaf.org" th:replace="User/userbasepage::Layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Home</title>
+</head>
+<body>
+	
+  <section>
+<!--        <span th:text="${contact}"></span> -->
+	
+	<div class="card mr-5 ml-5">
+		
+		<div class="card-body">
+			<h2 class="text-center">Your Contacts</h2>
+			
+	<!-- contact show in table  -->		
+	<table class="table">
+	
+	<!-- table head -->	  
+		  <thead>
+		    <tr>
+		      <th scope="col">#ID</th>
+		      <th scope="col">Name</th>
+		      <th scope="col">Email</th>
+		      <th scope="col">Phone</th>
+		      <th scope="col">Action</th>
+		    </tr>
+		  </thead>
+		  
+	<!-- contact details -->	  
+		  <tbody>
+		  
+		    <tr th:each="c:${contact}"><!-- for loop load -->
+		      <th scope="row" th:text="${'contact '+c.cid}"></th><!-- cid name same as Contact.java variable cid -->
+		      
+		      <td th:text="${c.name}">  </td>  <!-- name is same as Contact.java variable -->
+		      
+		      <td th:text="${c.email}">  </td><!-- email same as Contact.java variable name email-->
+		      
+		      <td th:text="${c.phone}">  </td><!-- phone same as the Contact.java variable name phone -->
+		      
+		      			<!-- create Action buttons -->
+		      <td >
+				<!-- create button for Delete-->
+				<button class="btn btn-danger btn-sm">Delete</button>
+				
+				<!-- create button for Update-->
+				<button class="btn btn-warning btn-sm">Update</button>
+			  </td>
+		    </tr>
+		    
+		  </tbody>
+   
+   </table>
+						
+		</div>
+	</div> 
+
+  </section>
+</body>
+</html>

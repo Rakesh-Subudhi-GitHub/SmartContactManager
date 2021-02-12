@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeLeaf.org" th:replace="User/userbasepage::Layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Home</title>
+</head>
+<body>
+	
+<section>
+
+<div class="container">
+
+<div class="card">
+
+<div class="card-body ">
+
+<!-- name or image -->
+
+<div class="text-center">
+<img class="poticularContact_Img" th:src="@{'/image/'+${userdata.imgUrl}}" src="" alt="profile photo" />
+
+</div>		   
+
+<h2 class="text-center" th:text="${userdata.name}"></h2>
+
+<table class="table text-center ml-5 mr-5">
+
+  <thead>
+    <tr>
+      <th scope="row">#UserID</th>
+      <th scope="row">User<span th:text="${userdata.id}"></span></th>
+      </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <th scope="row">Email</th>
+      <td><span th:text="${userdata.email}"></span></td>
+    </tr>
+    
+    <tr>
+      <th scope="row">User active</th>
+      <td><span th:text="${userdata.enable}"></span></td>
+    </tr>
+    
+    
+    <tr>
+      <th scope="row">User Role</th>
+      <td><span th:text="${userdata.role}"></span></td>
+    </tr>
+    
+    <tr>
+      <th scope="row">About</th>
+      <td><span th:text="${userdata.about}"></span></td>
+    </tr>
+    
+   </tbody>
+</table>
+
+
+
+</div>
+
+</div>
+
+</div>     
+
+</section>
+</body>
+</html>

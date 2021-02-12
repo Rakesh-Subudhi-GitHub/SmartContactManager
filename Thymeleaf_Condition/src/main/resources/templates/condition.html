@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Conditional operater check</title>
+</head>
+
+<body>
+
+<h1> Conditional operate work will be execute in Thymeleaf....</h1>
+	
+	<h1>User is <span th:style="   ${isActive} ?  'color:green' : 'color:red' " 
+															 th:text="${isActive} ? 'Active Working ' : 'User is not Active' "></span></h1>
+	
+	<h1> only IF check::: </h1>
+	
+	<h2 th:if="${gender}=='M' ">Male</h2>
+	<h2 th:if="${gender}!='M'  " >Female</h2>
+	
+	<h1> IF or Unless check::: </h1>
+	
+	<h2 th:if="${gender}=='M' ">Male</h2>
+	<h2 th:unless="${gender=='	M'} " >Female</h2>
+
+<h1> Switch case used ::::</h1>
+<div th:switch="${ #lists.size(mylist)}">
+
+<h2 th:case=" '0' ">List Contain zero elements</h2>
+<h2 th:case=" '1' ">List Contain One elements</h2>
+<h2 th:case=" '*' "> List Contain More than One elements </h2>
+</div>
+</body>
+</html>
